@@ -48,9 +48,12 @@ if (str_ends_with($string, 'ld')) {
 
 // HTML Entities
 $string2 = '<h1>Hello World</h1>';
+$string3 = '<script>alert(Alert string3)</script>';
+// echo $string3;
+echo htmlspecialchars($string3);
 echo htmlentities($string2);
 
 // Formatted Strings - useful when you have outside data
 // Different specifiers for different data types
-printf('%s is a %s', 'Brad', 'nice guy');
+printf('%s is a %s %s %s', 'Brad', 'nice guy', 'yep', 'NiceGuy!');
 printf('1 + 1 = %f', 1 + 1); // float
