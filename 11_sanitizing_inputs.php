@@ -14,12 +14,12 @@ if (isset($_POST['submit'])) {
   // $email = htmlspecialchars($_POST['email']);
 
   // filter_var() - Sanitize data
-  // $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-  // $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
   // filter_input() - Sanitize inputs
-  $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-  $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  // $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  // $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
   // FILTER_SANITIZE_STRING - Convert string to string with only alphanumeric, whitespace, and the following characters - _.:/
   // FILTER_SANITIZE_EMAIL - Convert string to a valid email address
@@ -32,18 +32,18 @@ if (isset($_POST['submit'])) {
 <!-- Pass data through a form -->
 <!-- php_self can be used for xss -->
 <form action="<?php echo htmlspecialchars(
-  $_SERVER['PHP_SELF']
-); ?>" method="POST">
-<div>
-  <label>Name: </label>
-  <input type="text" name="name">
-</div>
-<br>
-<?php echo $email; ?>
-<div>
-<label>Email: </label>
-  <input type="email" name="email">
-</div>
-<br>
+                $_SERVER['PHP_SELF']
+              ); ?>" method="POST">
+  <div>
+    <label>Name: </label>
+    <input type="text" name="name">
+  </div>
+  <br>
+  <?php echo $email; ?>
+  <div>
+    <label>Email: </label>
+    <input type="email" name="email">
+  </div>
+  <br>
   <input type="submit" name="submit" value="Submit">
 </form>

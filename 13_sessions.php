@@ -31,18 +31,18 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-  <form action="<?php echo htmlspecialchars(
-    $_SERVER['PHP_SELF']
-  ); ?>" method="POST">
-    <div>
-      <label>Username: </label>
-      <input type="text" name="username">
-    </div>
-    <br>
-    <div>
-      <label>Password: </label>
-      <input type="password" name="password">
-    </div>
-    <br>
-    <input type="submit" name="submit" value="Submit">
-  </form>
+<form action="<?php echo htmlspecialchars(
+                $_SERVER['PHP_SELF']
+              ); ?>" method="POST">
+  <div>
+    <label for="username">Username: </label>
+    <input type="text" name="username">
+  </div>
+  <br>
+  <div>
+    <label for="password">Password: </label>
+    <input type="password" name="password">
+  </div>
+  <br>
+  <input type="submit" name="submit" value="Submit">
+</form>

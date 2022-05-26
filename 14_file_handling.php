@@ -32,7 +32,26 @@ if (file_exists($file)) {
   // fwrite() writes the contents to the file and returns the number of bytes written on success, or FALSE on failure.
   fwrite($handle, $contents);
   fclose($handle);
-}
+};
+
+$file2 = "extras/superUsers.txt";
+echo '<br>';
+
+
+if (file_exists($file2)) {
+  # code...
+  $handleVar = fopen($file2, 'r');
+  $contents = fread($handleVar, filesize($file));
+  fclose($handleVar);
+  echo ($contents);
+} else {
+  # code...
+  $handle = fopen($file2, 'w');
+  $contents = "Jean" . PHP_EOL . "Pierre" . PHP_EOL . "Papin";
+  fwrite($handle, $contents);
+  fclose($handle);
+};
+
 
 /*
 r	- Open a file for read only. File pointer starts at the beginning of the file
