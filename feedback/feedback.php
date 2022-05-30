@@ -25,7 +25,6 @@ $feedback = mysqli_fetch_all($result, MYSQLI_ASSOC);
       </div>
     </div>
   </div>
-
 <?php endforeach; ?>
 <!-- 
 <div class="card my-3">
